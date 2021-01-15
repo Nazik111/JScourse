@@ -1,38 +1,21 @@
 "use strict";
 
-const obj = {
-    a: 10,
-    b: 20,
-    c: {
-        x: 1,
-        y:2
-    }
-};
 
-const copy = Object.assign({},obj)
-copy.c.x = 99;
+const box = document.getElementById('box')
+console.log(box)
 
-console.log(obj,copy);
+const buttons = document.getElementsByTagName('button');//[1] індекс елемента з псевдомассиву
+console.log(buttons[3]) //індекс елемента псевдомассиву
 
-const video = ['youtube','vimeo', 'rutube'],
-    blogs = ['wordpress', 'livejournal','blogger'],
-    internet = [...video, ...blogs, 'hello'];
-console.log(internet);
+const circles = document.getElementsByClassName('circle')
+console.log(circles)
 
-const john = {
-    age: 20,
-    height: 1.8
-}
+const hearts = document.querySelectorAll('.heart');
 
-const student = {
-    groups: 'KN-314',
-    sayHello: function () {
-        console.log('hello world')
-    }
-}
+hearts.forEach((item)=> {
+console.log(item);
+})
 
-const john = Object.create(student);
+const oneHeart = document.querySelector('.heart')
+console.log(oneHeart)
 
-Object.setPrototypeOf(john, student);
-
-console.log(john.sayHello());
