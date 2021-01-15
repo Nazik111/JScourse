@@ -1,21 +1,37 @@
 "use strict";
 
 
-const box = document.getElementById('box')
-console.log(box)
+const box = document.getElementById('box'),
+    buttons = document.getElementsByTagName('button'),//[1] індекс елемента з псевдомассиву
+    circles = document.getElementsByClassName('circle'),
+    hearts = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart'),
+wrapper = document.querySelector('.wrapper');
 
-const buttons = document.getElementsByTagName('button');//[1] індекс елемента з псевдомассиву
-console.log(buttons[3]) //індекс елемента псевдомассиву
 
-const circles = document.getElementsByClassName('circle')
-console.log(circles)
+buttons[1].style.borderRadius = '100%';
+circles[0].style.backgroundColor = 'red';
 
-const hearts = document.querySelectorAll('.heart');
+box.style.cssText = 'background-color: blue; width: 60vw';
 
-hearts.forEach((item)=> {
-console.log(item);
+/*
+for (let i=0; i<hearts.length; i++) {
+    hearts[i].style.backgroundColor='orange'
+}*/
+
+hearts.forEach(item => {
+    item.style.backgroundColor = 'orange';
 })
 
-const oneHeart = document.querySelector('.heart')
-console.log(oneHeart)
+const div = document.createElement('div');
+//const text = document.createTextNode('Hello world');
 
+div.classList.add('black');
+
+/*circles[0].remove();*/
+
+document.body.append(div)
+
+div.innerHTML = "<h1>hello<h2/>";
+
+div.insertAdjacentHTML('beforebegin', "<h2>Hello world!</h2>")
